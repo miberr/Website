@@ -47,19 +47,25 @@ const config: Config = {
       {
         docs: false,
         blog: {
-          showReadingTime: true,
+          archiveBasePath: null,
+          authorsBasePath: '/authors',
+          blogTitle: "Fusion Development in Microsoft Power Platform",
+          blogDescription: "Blogs about Microsoft Power Platform, especially fusion develoment angle.",
+          blogSidebarCount: "ALL",
+          blogSidebarTitle: "Recent Posts",
           feedOptions: {
             type: "all",
             copyright: `Copyright © ${new Date().getFullYear()} Mikko Berg`,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+          postsPerPage: 20,
+          routeBasePath: '/blog',
+          showLastUpdateTime: true,
+          showReadingTime: true,
+          tagsBasePath: '/tags',
         },
         theme: {
           customCss: [require.resolve("./src/css/custom.scss")],
