@@ -29,7 +29,7 @@ const config: Config = {
   plugins: [
     "docusaurus-plugin-sass",
     [
-      "@docusaurus/plugin-ideal-image",
+      '@docusaurus/plugin-ideal-image',
       {
         quality: 85,
         max: 2000,
@@ -102,6 +102,13 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      logo: {
+        alt: 'Logo',
+        src: 'img/logo.svg',
+        href: 'https://mikkoberg.com',
+        width: 100,
+        height: 25,
+      },
       links: [
 
         {
