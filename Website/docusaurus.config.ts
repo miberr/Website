@@ -1,8 +1,9 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+require('dotenv').config();
 
 const config: Config = {
   title: 'Mikko Berg, senior Microsoft Power Platform consultant',
@@ -38,6 +39,15 @@ const config: Config = {
         disableInDev: false,
       },
     ],
+    [
+      "@microsoft/docusaurus-plugin-application-insights", 
+      {
+        config: {
+          connectionString: process.env.APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING,
+        },
+        enableClickAnalytics: true,
+      }
+    ]
 
   ],
 
@@ -76,7 +86,7 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/social-card.png',
-    metadata:[
+    metadata: [
       {
         name: 'description',
         content: 'Power Platform consultant, trainer and all around tech enthusiast.',
@@ -97,8 +107,8 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-    
-        {to: '/blog', label: 'Blog', position: 'left'},
+
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/miberr',
           label: 'GitHub',
@@ -128,7 +138,7 @@ const config: Config = {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/in/miberr',
             },
-            
+
           ],
         },
         {
@@ -141,7 +151,7 @@ const config: Config = {
             {
               label: 'Blog',
               to: '/blog',
-            }            
+            }
           ],
         },
       ],
