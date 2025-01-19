@@ -35,7 +35,7 @@ jobs:
           resource-group-name: ${{ secrets.AZURE_RESOURCE_GROUP }}
           scope: resourceGroup
           template-file: ./Bicep/main.bicep
-          name: GitHubActions${{ steps.date.outputs.date }}
+          name: ${{ format('GithubActions-{0}', steps.date.outputs.date) }}
   deploy:
     name: Deploy Website to Azure
     runs-on: ubuntu-latest
@@ -62,4 +62,4 @@ jobs:
           api_location: ""
           output_location: "build"
         env:
-          APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ job.infra.outputs.appInsightsConnectionString }}
+          APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ needs.infra.outputs.appInsightsConnectionString }}
