@@ -4,6 +4,9 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+
 jobs:
     infra:
         name: Deploy to infrastrucure to Azure
