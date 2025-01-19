@@ -20,7 +20,7 @@ Console.WriteLine("Hello World!");
 ## What's the point 🎯?
 
 
-My main objective here is to create content about things that I've needed to research and stitch together into a logical post - naturally to help out someone who's searching for same answers as I did. Of course I'm not going to forget the basics. To reiterate, heres some ideas:
+The main objective here is to create content about things that I've needed to research and stitch together into a logical post - naturally to help out someone who's searching for the same answers as I did. Of course I'm not going to forget the basics. To reiterate, heres some ideas:
 
 ✅ Basics on Power Platform and Azure <br/>
 ✅ Technical tutorials on how to do advanced things <br/>
