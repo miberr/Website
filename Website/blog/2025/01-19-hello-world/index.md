@@ -1,7 +1,7 @@
 ---
 authors: mikko
 draft: true
-description: Hello World! What is mikkoberg.com about!
+description: Hello World! What is mikkoberg.com about?
 image: 'hero.png'
 keywords: [hello world, introduction]
 slug: hello-world
