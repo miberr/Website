@@ -19,7 +19,6 @@ Console.WriteLine("Hello World!");
 
 ## What's the point 🎯?
 
-Now, I know there is a lot of blogs out there, especially technical blogs, so what makes my blog stand out? The content here is going to relate fully or in some capacity to my career, which is Microsoft Power Platform consultancy, as well as Azure. I'm a strong believer in Fusion Development, so I'll do my best to bring out the best in both in my series of blogs. 
 
 My main objective here is to create content about things that I've needed to research and stitch together into a logical post - naturally to help out someone who's searching for same answers as I did. Of course I'm not going to forget the basics. To reiterate, heres some ideas:
 
@@ -27,6 +26,8 @@ My main objective here is to create content about things that I've needed to res
 ✅ Technical tutorials on how to do advanced things <br/>
 ✅ Best practices <br/>
 ✅ Other new or interesting stuff I wanted to share 
+
+Now, I know there is a lot of blogs out there, especially technical blogs, so what makes my blog stand out? The content here is going to relate fully or in some capacity to my career, which is Microsoft Power Platform consultancy, as well as Azure. I'm a strong believer in Fusion Development, so I'll do my best to bring out the best in both in my series of blogs. 
 
 ## Can you help me?
 
