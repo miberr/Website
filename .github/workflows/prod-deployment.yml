@@ -62,4 +62,4 @@ jobs:
           api_location: ""
           output_location: "build"
         env:
-          APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ steps.bicep.outputs.appInsightsConnectionString }}
+          APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ steps.bicep.outputs.appInsightsConnectionString.value }}
