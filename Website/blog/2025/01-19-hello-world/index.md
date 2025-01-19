@@ -1,7 +1,8 @@
 ---
 authors: mikko
-draft: true
+draft: false
 description: Hello World! What is mikkoberg.com about?
+hide_table_of_contents: true
 image: 'hero.png'
 keywords: [hello world, introduction]
 slug: hello-world
@@ -18,7 +19,6 @@ Console.WriteLine("Hello World!");
 <!-- truncate -->
 
 ## What's the point 🎯?
-
 
 The main objective here is to create content about things that I've needed to research and stitch together into a logical post - naturally to help out someone who's searching for the same answers as I did. Of course I'm not going to forget the basics. To reiterate, heres some ideas:
 

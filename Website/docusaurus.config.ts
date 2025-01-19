@@ -107,8 +107,8 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        { to: '/projects', label: 'Projects', position: 'right' },
         { to: '/blog', label: 'Blog', position: 'right' },
+        { to: '/projects', label: 'Projects', position: 'right' },
       ],
     },
     footer: {
