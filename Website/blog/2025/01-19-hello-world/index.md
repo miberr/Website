@@ -29,7 +29,7 @@ The main objective here is to create content about things that I've needed to re
 
 Now, I know there is a lot of blogs out there, especially technical blogs, so what makes my blog stand out? 
 
-The content here is going to relate fully or in some capacity to my career, which is Microsoft Power Platform consultancy, as well as Azure. I'm a strong believer in Fusion Development, so I'll do my best to bring out the best in both in my series of blogs. 
+The content here is going to relate fully or in some capacity to my career, which is Microsoft Power Platform consultancy, as well as Azure. I'm a strong believer in Fusion Development, so I'll do my best to bring out the best in both in my series of blogs!
 
 ## Can you help me?
 
