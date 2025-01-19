@@ -71,4 +71,5 @@ jobs:
           api_location: ""
           output_location: "build"
         env:
+          PRE_BUILD_COMMAND: git config --global --add safe.directory /github/workspace
           APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ needs.infra.outputs.appInsightsConnectionString }}
