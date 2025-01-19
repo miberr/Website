@@ -11,6 +11,8 @@ jobs:
   infra:
     name: Deploy to infrastrucure to Azure
     runs-on: ubuntu-latest
+    outputs:
+      appInsightsConnectionString: ${{ steps.bicep.outputs.appInsightsConnectionString }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,7 +25,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       
       - id: date
-        run: echo " date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT    
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT    
       
       - id: bicep
         name: Run Bicep deployment
@@ -37,8 +39,6 @@ jobs:
           template-file: ./Bicep/main.bicep
           name: ${{ format('GithubActions-{0}', steps.date.outputs.date) }}
 
-      - shell: bash
-        run: echo "APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING=" ${{ steps.bicep.outputs.appInsightsConnectionString }} >> "$GITHUB_ENV"
   deploy:
     name: Deploy Website to Azure
     runs-on: ubuntu-latest
@@ -65,4 +65,4 @@ jobs:
           api_location: ""
           output_location: "build"
         env:
-          APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ env.APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING }}
+          APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ needs.infra.outputs.APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING }}
