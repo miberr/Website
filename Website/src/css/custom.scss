@@ -35,12 +35,12 @@ h5 {
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
   --ifm-color-primary: var(--pk-green);
-  --ifm-color-primary-dark: #adfa1e;
-  --ifm-color-primary-darker: #a7fa0e;
-  --ifm-color-primary-darkest: #8cd504;
-  --ifm-color-primary-light: #c3fc5a;
-  --ifm-color-primary-lighter: #c9fc6a;
-  --ifm-color-primary-lightest: #d9fd97;
+  --ifm-color-primary-dark: #aff342;
+  --ifm-color-primary-darker: #a9f232;
+  --ifm-color-primary-darkest: #91e20e;
+  --ifm-color-primary-light: #cbf782;
+  --ifm-color-primary-lighter: #d1f892;
+  --ifm-color-primary-lightest: #e6fbc3;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -103,6 +103,11 @@ html[data-theme="dark"] {
     }
   }
 }
+
+[data-theme='dark'] .badge--primary {
+  color: var(--ifm-color-black);
+}
+
 
 .DocSearch {
   [data-theme="light"] & {

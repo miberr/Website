@@ -107,17 +107,12 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-
-        { to: '/blog', label: 'Blog', position: 'left' },
-        {
-          href: 'https://github.com/miberr',
-          label: 'GitHub',
-          position: 'right',
-        },
+        { to: '/projects', label: 'Projects', position: 'right' },
+        { to: '/blog', label: 'Blog', position: 'right' },
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       logo: {
         alt: 'Logo',
         src: 'img/logo.svg',
@@ -151,11 +146,15 @@ const config: Config = {
             {
               label: 'Blog',
               to: '/blog',
+            },
+            {
+              label: 'Projects',
+              to: '/projects',
             }
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Mikko Berg.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Mikko Berg`,
     },
     prism: {
       theme: prismThemes.github,
