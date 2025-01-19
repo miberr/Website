@@ -157,6 +157,7 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Mikko Berg`,
     },
     prism: {
+      additionalLanguages: ['csharp'],
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
