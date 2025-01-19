@@ -2,8 +2,8 @@
 name: Outdated Content
 about: Create a report to help us improve
 title: ''
-labels: ''
-assignees: ''
+labels: outdated content
+assignees: miberr
 
 ---
 
