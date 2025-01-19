@@ -34,7 +34,7 @@ jobs:
           location: westeurope
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resource-group-name: ${{ secrets.AZURE_RESOURCE_GROUP }}
-          scope: resourceGroup
+          scope: subscription
           template-file: ./Bicep/main.bicep
           name: GitHubActions${{ steps.date.outputs.date }}
   deploy:

@@ -67,17 +67,4 @@ resource comZoneARecord 'Microsoft.Network/dnsZones/A@2023-07-01-preview' = {
   }
 }
 
-resource comZoneTXTRecord 'Microsoft.Network/dnsZones/TXT@2023-07-01-preview' = {
-  parent: comZone
-  name: '@'
-  properties: {
-    TTL: 86400
-    TXTRecords: [
-      {
-        value: [staticWebsiteDomain.properties.validationToken]
-      }
-    ]
-  }
-}
-
 output appInsightsConnectionString string = appinsights.properties.ConnectionString
