@@ -53,7 +53,7 @@ resource staticWebsiteDomain 'Microsoft.Web/staticSites/customDomains@2024-04-01
 
 resource comZone 'Microsoft.Network/dnsZones@2023-07-01-preview' = {
   name: zoneName
-  location: resourceGroup().location
+  location: 'global'
 }
 
 resource comZoneARecord 'Microsoft.Network/dnsZones/A@2023-07-01-preview' = {
