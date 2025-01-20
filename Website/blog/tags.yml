@@ -1,9 +1,29 @@
+design:
+  label: Design
+  permalink: /design
+  description: Articles about design principles
+
+emoji:
+  label: Emoji
+  permalink: /emoji
+
 hello:
   label: Hello
   permalink: /hello
-  description: Personal blogs
+
+icon:
+  label: Icon
+  permalink: /icon
 
 introduction:
   label: Introduction
   permalink: /introduction
-  description: Introduction blogs
+
+powerApps:
+  label: Power Apps
+  permalink: /power-apps
+  description: Articles about Power Apps
+
+powerPlatform:
+  label: Power Platform
+  permalink: /power-platform
