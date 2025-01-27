@@ -1,6 +1,6 @@
 ---
 authors: mikko
-draft: true
+draft: false
 description: Adding Emojis to your Power Platform solutions!
 hide_table_of_contents: false
 image: 'hero.png'
