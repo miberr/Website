@@ -44,6 +44,7 @@ const config: Config = {
       {
         config: {
           connectionString: process.env.APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING,
+          autoTrackPageVisitTime: true
         },
         enableClickAnalytics: true,
       }
