@@ -1,6 +1,6 @@
 ---
 authors: mikko
-draft: true
+draft: false
 description: Learn essential JavaScript techniques to enhance your Model-Driven Power Apps, including form customization, real-time calculations, and user notifications.
 hide_table_of_contents: false
 image: './hero.png' 
@@ -10,15 +10,15 @@ title: Must know JavaScript in model-driven Power Apps
 tags: [powerApps, powerPlatform, clientSideScripting, javaScript]
 ---
 
-Model-Driven Power Apps enable makes to quickly create data focused applications. As the name suggests they lean on the data model in Dataverse. We can customize forms functionality with [business rules](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-create-business-rule) to automatically populate columns, show validation messages and control column visibility and requirement level. Business rules work in the scope of a column - what if we want to control other things on the form? Let’s dive into simple JavaScript functions every citizen developer should know!
+Model-Driven Power Apps enable makers to quickly create data focused applications. As the name suggests they lean on the data model in Dataverse. We can customize forms functionality with [business rules](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-create-business-rule) to automatically populate columns, show validation messages and control column visibility and requirement level. Business rules work in the scope of a column - what if we want to control other things on the form? Let’s dive into simple JavaScript functions every citizen developer should know!
 
 <!-- truncate -->
 
 ## JavaSript 🤔
 
-JavaScript is one of the three language of the web. It gives websites their functionality. In the context of Power Apps, we need it to control Model-Driven forms after business rules can’t accommodate our requirements. 
+JavaScript is one of the three language of the web - it gives websites their functionality. In the context of Power Apps, we need it to control Model-Driven forms after business rules can’t accommodate our requirements. 
 
-Business rules is the  no-code option for creating custom functionality. They are easy to create and modify. Business rules should be your primary choice, not JavaScript. Only when business rules, should you look into JavaScript. There is one caveat here. You should not use business rules and JavaScript on the same form.  
+Business rules is the no-code option for creating custom functionality. They are easy to create and modify. Business rules should be your primary choice instead of JavaScript. Only when business rules can't do the task, should you look into JavaScript. The one caveat here is that you should not use business rules and JavaScript on the same form.  
 
 ## Business Rules vs JavaScript
 
@@ -38,7 +38,7 @@ Business rules is the  no-code option for creating custom functionality. They ar
 [^1]: doesn’t support choices (multi-select), file or language datatypes
 [^2]: Show or hide columns, enable or disable columns and business recommendations based on business intelligence action types only work in form context
 
-While business rules are usefull, pretty soon you’ll run into a case where you need more. This is where JavaScript, Client Side Scripting, comes in.
+While business rules are useful, pretty soon you’ll run into a case where you need more. This is where JavaScript, Client Side Scripting, comes in.
 
 ## Getting started
 
@@ -52,7 +52,7 @@ My use case here is a model-driven Power App, where employee data and shifts are
 
 ### Write your script
 
-Writing JavaScript can seem daunting, if you have no prior programming experience. Don't worry, you can start off by copy-pasting and limited modifications. It is really that easy. To write code, we generally use code editors, like [Visual Studio Code](https://code.visualstudio.com/). I highly recommend downloading it, as it helps in many places from displaying JSON from Power Automate to actually coding. 
+Writing JavaScript can seem daunting, if you have no prior programming experience. Don't worry, you can start off using copy-pasting and adding limited modifications. It is really that easy 😎! To write code, we generally use code editors, like [Visual Studio Code](https://code.visualstudio.com/). I highly recommend downloading it, as it helps in many places from displaying JSON from Power Automate to actually coding. 
 
 #### Create namespace
 
@@ -109,7 +109,7 @@ To use our script file, we first need to create a web resource.
 
 ### Register event handlers
 
-Now that we have a web resource we can put it in use. Next we register our event handlers. What are those, you ask? Event handler registration tells model-driven app, that this event is handled by that function. There are quite a few events we could tap into, but we'll use **On Load** for now. Our app fires the event when a form is saved and then our registered handler will excecute the logic.
+Now that we have a web resource we can put it in use. Next we register our event handlers. What are those, you might ask? Event handler registration tells model-driven app, that this event is handled by that function. There are quite a few events we could tap into, but we'll use **On Load** for now. Our app fires the event when a form is saved and then our registered handler will excecute the logic.
 
 1. Navigate to your solution in [Power Apps Maker portal](https://make.powerapps.com/).
 1. Open the form you want to register this code into. I'll register it into Shift table main form.
@@ -137,7 +137,7 @@ Now we have created our script, web resource and registered our first event hand
 1. Create new record on the form. Now the form will load and we'll see our console message!<br/>
     ![Console log message visible](./console-log-visible.png)
 
-Now you know, how to create and register client side scripting, awesome! Next I'll discuss most common use cases and how to implement them.
+Now you know how to create and register client side scripting, awesome! Next I'll discuss most common use cases and how to implement them.
 
 ## Most common use cases 
 
@@ -145,7 +145,7 @@ Now you know, how to create and register client side scripting, awesome! Next I'
 
 While showing and hiding can be accomplished with Business Rules, they do not support hiding complete sections or tabs. In my opinion it's kind of a bummer, but with simple JavaScript we can do this. 
 
-I have a simple form, that has two sections. I want to hide the resources section, when **Needs Resources** is set to **yes**. 
+I have a simple form, which has two sections. I want to hide the resources section, when **Needs Resources** is set to **yes**. 
 
 ![App now](./shift-planner-resources-visible.png)
 
@@ -243,4 +243,4 @@ This code is registered as event handler to the **On Load** event of the form, s
 
 ## Conclusion
 
-In conclusion, JavaScript is a powerful tool that can significantly enhance the functionality of your Model-Driven Power Apps. While business rules provide a no-code solution for many scenarios, JavaScript allows for more complex and customized behaviors that business rules cannot achieve. By understanding how to write scripts, create web resources, and register event handlers, you can take full control over your forms and provide a better user experience. 
+In conclusion, JavaScript is a powerful tool that can significantly enhance the functionality of your Model-Driven Power Apps. While business rules provide a no-code solution for many scenarios, JavaScript allows for more complex and customized behaviors that business rules cannot achieve! By understanding how to write scripts, create web resources, and register event handlers, you can take full control over your forms and provide a better user experience. 
