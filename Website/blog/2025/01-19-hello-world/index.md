@@ -3,7 +3,7 @@ authors: mikko
 draft: false
 description: Hello World! What is mikkoberg.com about?
 hide_table_of_contents: true
-image: 'hero.png'
+image: './hero.png'
 keywords: [hello world, introduction]
 slug: hello-world
 title: Hello World!

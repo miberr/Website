@@ -3,7 +3,7 @@ authors: mikko
 draft: false
 description: Adding Emojis to your Power Platform solutions!
 hide_table_of_contents: false
-image: 'hero.png'
+image: './hero.png'
 keywords: [power platform, power apps, emoji, icons]
 slug: universal-language-emojis-in-power-platform
 title: The universal language of Emojis in Power Platform 😍
