@@ -123,9 +123,6 @@ const config: Config = {
       },
       links: [
 
-        {
-          title: 'Community',
-          items: [
             {
               label: 'GitHub',
               href: 'https://github.com/miberr',
@@ -133,13 +130,7 @@ const config: Config = {
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/in/miberr',
-            },
-
-          ],
-        },
-        {
-          title: 'Discover',
-          items: [
+            },   
             {
               label: 'About me',
               to: '/',
@@ -153,8 +144,7 @@ const config: Config = {
               to: '/projects',
             }
           ],
-        },
-      ],
+     
       copyright: `Copyright © ${new Date().getFullYear()} Mikko Berg`,
     },
     prism: {

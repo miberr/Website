@@ -2,6 +2,12 @@ import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { AboutMe } from "../components/home/AboutMe";
+import { 
+  Credentials,
+  CredentialLink,
+  CredentialColumnData,
+  CredentialSeparateImage, 
+} from "../components/home/Credentials";
 import {
   LinkData,
   Links,
@@ -9,6 +15,10 @@ import {
 import { Hero } from "../components/home/Hero";
 
 import avatar from "./assets/index/avatar.jpg";
+import mctIcon from "./assets/index/mct-icon.png";
+import fundamentalsIcon from "./assets/index/fundamentals-certification-icon.png";
+import associateIcon from "./assets/index/associate-certification-icon.png";
+import expertIcon from "./assets/index/expert-certification-icon.png";
 import AboutMeDesc from "./assets/index/_about-me.md";
 
 const socialLinks: LinkData[] = [
@@ -34,6 +44,89 @@ const socialLinks: LinkData[] = [
   },
 ];
 
+const credentialSeparateImages: CredentialSeparateImage[] = [
+  {
+    image: mctIcon,
+    alt: "Microsoft Certified Trainer",
+  },
+];
+
+const credentialColumnData: CredentialColumnData[] = [
+  {
+    imageUrl: expertIcon,
+    alt: "Microsoft Certified Expert",
+    items: [
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/5EA480756149757?sharingId=E13526A50BF73FFB",
+        label: "Power Platform Solution Architect Expert",
+        code: "PL-600",
+      },
+    ],
+  },
+  {
+    imageUrl: associateIcon,
+    alt: "Microsoft Certified Associate",
+    items: [
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/A9817BF6E2E87CD5?sharingId=E13526A50BF73FFB",
+        label: "Power Platform Functional Consultant Associate",
+        code: "PL-200",
+      },
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/9101DF4E4B811DAB?sharingId=E13526A50BF73FFB",
+        label: "Power BI Data Analyst Associate",
+        code: "PL-300",
+      },
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/77EBBFDA7A4659B3?sharingId=E13526A50BF73FFB",
+        label: "Power Platform Developer Associate",
+        code: "PL-400",
+      },
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/33B426E7DDF37FD4?sharingId=E13526A50BF73FFB",
+        label: "Power Automate RPA Developer Associate",
+        code: "PL-500",
+      },
+    ],
+  },
+  {
+    imageUrl: fundamentalsIcon,
+    alt: "Microsoft Certified Fundamentals",
+    items: [
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/2AA3DACEB5EFB296?sharingId=E13526A50BF73FFB",
+        label: "Azure AI Fundamentals",
+        code: "AI-900",
+      },
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/45C0F9459E30B76?sharingId=E13526A50BF73FFB",
+        label: "Azure Fundamentals",
+        code: "AZ-900",
+      },
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/AD7015F2008289FA?sharingId=E13526A50BF73FFB",
+        label: "Azure Data Fundamentals",
+        code: "DP-900",
+      },
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/5B9099FE8DFB9D4B?sharingId=E13526A50BF73FFB",
+        label: "Dynamics 365 Fundamentals (CRM)",
+        code: "MB-910",
+      },
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/42C566AA56E45D5D?sharingId=E13526A50BF73FFB",
+        label: "Microsoft 365 Fundamentals",
+        code: "MS-900",
+      },
+      {
+        link: "https://learn.microsoft.com/api/credentials/share/en-us/miberr/BEAB110859F047D4?sharingId=E13526A50BF73FFB",
+        label: "Power Platform Fundamentals",
+        code: "PL-900",
+      }
+    ],
+  },
+];
+
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -42,6 +135,7 @@ export default function Home(): JSX.Element {
       <main>
         <div className="container padding-vert">
           <AboutMe avatar={avatar} descriptionComponent={<AboutMeDesc />} />
+          <Credentials title="Credentials" columns={credentialColumnData} separateImages={credentialSeparateImages} />
           <Links data={socialLinks} title="Social media" />
         </div>
       </main>
