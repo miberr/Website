@@ -36,3 +36,8 @@ powerApps:
 powerPlatform:
   label: Power Platform
   permalink: /power-platform
+
+workflow:
+  label: Workflow
+  permalink: /workflow
+  description: Articles about enhancing your workflows
