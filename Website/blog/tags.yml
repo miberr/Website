@@ -1,43 +1,63 @@
+automation:
+    label: automation
+    permalink: /automation
+    description: Articles about automations in Power Platform
+
+c#:
+    label: C#
+    permalink: /csharp
+    description: Using C# in Power Platform
+
 clientSideScripting:
-  label: Client Side Scripting
-  permalink: /client-side-scripting
-  description: Articles about client side scripting in model-driven Power Apps
+    label: Client Side Scripting
+    permalink: /client-side-scripting
+    description: Articles about client side scripting in model-driven Power Apps
+
+dataverse:
+    label: dataverse
+    permalink: /dataverse
+    description: Articles regarding all things dataverse
 
 design:
-  label: Design
-  permalink: /design
-  description: Articles about design principles
+    label: Design
+    permalink: /design
+    description: Articles about design principles
 
 emoji:
-  label: Emoji
-  permalink: /emoji
+    label: Emoji
+    permalink: /emoji
 
 hello:
-  label: Hello
-  permalink: /hello
+    label: Hello
+    permalink: /hello
 
 icon:
-  label: Icon
-  permalink: /icon
+    label: Icon
+    permalink: /icon
 
 introduction:
-  label: Introduction
-  permalink: /introduction
+    label: Introduction
+    permalink: /introduction
 
 javaScript:
-  label: JavaScript
-  permalink: /javascript
+    label: JavaScript
+    permalink: /javascript
+
+plugin:
+    label: Plugin
+    permalink: /plugin
+    description: Articles about Dataverse Plugins
 
 powerApps:
-  label: Power Apps
-  permalink: /power-apps
-  description: Articles about Power Apps
+    label: Power Apps
+    permalink: /power-apps
+    description: Articles about Power Apps
 
 powerPlatform:
-  label: Power Platform
-  permalink: /power-platform
+    label: Power Platform
+    permalink: /power-platform
 
 workflow:
-  label: Workflow
-  permalink: /workflow
-  description: Articles about enhancing your workflows
+    label: Workflow
+    permalink: /workflow
+    description: Articles about enhancing your workflows
