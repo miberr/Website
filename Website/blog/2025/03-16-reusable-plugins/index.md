@@ -1,6 +1,6 @@
 ---
 authors: mikko
-draft: true
+draft: false
 description: Learn how to create a reusable Dataverse plugin for real-time rollup calculations. This step-by-step guide covers plugin development, configuration, and registration to enhance your Dataverse business logic and automation.
 hide_table_of_contents: false
 image: "./hero.png"
