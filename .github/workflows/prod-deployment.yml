@@ -1,75 +1,82 @@
 name: Production deployment
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 permissions:
-  id-token: write
-  contents: read
+    id-token: write
+    contents: read
 
 jobs:
-  infra:
-    name: Deploy to infrastrucure to Azure
-    runs-on: ubuntu-latest
-    outputs:
-      appInsightsConnectionString: ${{ steps.bicep.outputs.appInsightsConnectionString }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      
-      - id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT    
-      
-      - id: bicep
-        name: Run Bicep deployment
-        uses: azure/bicep-deploy@v2
-        with:
-          type: deployment
-          operation: create
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resource-group-name: ${{ secrets.AZURE_RESOURCE_GROUP }}
-          scope: resourceGroup
-          template-file: ./Bicep/main.bicep
-          name: ${{ format('GithubActions-{0}', steps.date.outputs.date) }}
+    infra:
+        name: Deploy to infrastrucure to Azure
+        runs-on: ubuntu-latest
+        outputs:
+            appInsightsConnectionString: ${{ steps.bicep.outputs.appInsightsConnectionString }}
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
-  deploy:
-    name: Deploy Website to Azure
-    runs-on: ubuntu-latest
-    needs: infra
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          submodules: true
-          fetch-depth: 0
-      
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+            - name: Get changed files
+              id: changed_files
+              uses: tj-actions/changed-files
 
-      - name: Build and deploy to Azure
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/Website"
-          app_build_command: "npm run build"
-          api_location: ""
-          output_location: "build"
-        env:
-          PRE_BUILD_COMMAND: git config --global --add safe.directory /github/workspace
-          APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ needs.infra.outputs.appInsightsConnectionString }}
+            - name: Login to Azure
+              uses: azure/login@v2
+              if: contains(steps.changed_files.outputs.files, 'main.bicep')
+              with:
+                  client-id: ${{ secrets.AZURE_CLIENT_ID }}
+                  tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+                  subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+            - id: date
+              if: contains(steps.changed_files.outputs.files, 'main.bicep')
+              run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+            - id: bicep
+              name: Run Bicep deployment
+              uses: azure/bicep-deploy@v2
+              if: contains(steps.changed_files.outputs.files, 'main.bicep')
+              with:
+                  type: deployment
+                  operation: create
+                  subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+                  resource-group-name: ${{ secrets.AZURE_RESOURCE_GROUP }}
+                  scope: resourceGroup
+                  template-file: ./Bicep/main.bicep
+                  name: ${{ format('GithubActions-{0}', steps.date.outputs.date) }}
+
+    deploy:
+        name: Deploy Website to Azure
+        runs-on: ubuntu-latest
+        needs: infra
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with:
+                  submodules: true
+                  fetch-depth: 0
+
+            - name: Login to Azure
+              uses: azure/login@v2
+              with:
+                  client-id: ${{ secrets.AZURE_CLIENT_ID }}
+                  tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+                  subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+            - name: Build and deploy to Azure
+              uses: Azure/static-web-apps-deploy@v1
+              with:
+                  azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+                  repo_token: ${{ secrets.GITHUB_TOKEN }}
+                  action: 'upload'
+                  app_location: '/Website'
+                  app_build_command: 'npm run build'
+                  api_location: ''
+                  output_location: 'build'
+              env:
+                  PRE_BUILD_COMMAND: git config --global --add safe.directory /github/workspace
+                  APPLICATION_INSIGHTS_INSTRUMENTATION_CONNECTION_STRING: ${{ needs.infra.outputs.appInsightsConnectionString }}
