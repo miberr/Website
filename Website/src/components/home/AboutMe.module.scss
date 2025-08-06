@@ -1,26 +1,26 @@
-@import "../../css/mixins";
+@use '../../css/mixins';
 
 .avatarContainer {
-  margin-left: 2rem;
-  @include small-size {
-    margin: 2rem 0 0;
-  }
+    margin-left: 2rem;
+    @include mixins.small-size {
+        margin: 2rem 0 0;
+    }
 }
 
 $avatar-size: 310px;
 
 .avatar {
-  display: block;
-  max-width: $avatar-size;
-  max-height: $avatar-size;
-
-  img,
-  & > div {
-    border-radius: 999px;
+    display: block;
+    max-width: $avatar-size;
     max-height: $avatar-size;
-  }
 
-  @include small-size {
-    margin: 0 auto;
-  }
+    img,
+    & > div {
+        border-radius: 999px;
+        max-height: $avatar-size;
+    }
+
+    @include mixins.small-size {
+        margin: 0 auto;
+    }
 }

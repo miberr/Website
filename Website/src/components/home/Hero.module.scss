@@ -1,44 +1,44 @@
-@import "../../css/mixins";
+@use '../../css/mixins';
 
 .heroBanner {
-  padding: 10rem 0 11rem;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-  background: #00060d;
-  color: #fff;
-  margin-bottom: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  
-  @include small-size {
-    padding: 4rem 2rem;
-  }
+    padding: 10rem 0 11rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    background: #00060d;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include mixins.small-size {
+        padding: 4rem 2rem;
+    }
 }
 
 .title {
-  font-size: 4rem;
-  text-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
+    font-size: 4rem;
+    text-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
 
-  @include small-size {
-    font-size: 2rem;
-  }
+    @include mixins.small-size {
+        font-size: 2rem;
+    }
 }
 
 .subtitle {
-  margin: 0;
-  @media screen and (min-width: 996px) {
-    padding-right: 20rem;
-  }
-  
-  @include small-size {
-    font-size: 1.2rem;
-  }
+    margin: 0;
+    @media screen and (min-width: 996px) {
+        padding-right: 20rem;
+    }
+
+    @include mixins.small-size {
+        font-size: 1.2rem;
+    }
 }
 
 .highlighted {
-  background: linear-gradient(30deg, #0054ad 0%, #1cb5d6 40%, #bdf562 80%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(30deg, #0054ad 0%, #1cb5d6 40%, #bdf562 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
