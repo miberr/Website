@@ -1,13 +1,11 @@
 ---
 authors: mikko
-draft: false
+draft: true
 description: DESCRIPTION HERE
 hide_table_of_contents: false
 image: './hero.png'
-keywords: ['keyword']
 slug: email-to-pdf
 title: TITLE HERE
-tags: ['tag']
 ---
 
 Let's be honest, nobody likes to deal with emails. Most of the time they're a necessary evil 😈 midst all modern communication channel options. Then the need arises - how to create a PDF automatically from a given email? That's what we'll discover in this blog.
