@@ -3,6 +3,26 @@ automation:
     permalink: /automation
     description: Articles about automations in Power Platform
 
+azure:
+    label: Azure
+    permalink: /azure
+    description: Articles about using Azure services
+
+azureFunctions:
+    label: Azure Functions
+    permalink: /azure-functions
+    description: Articles about using Azure Functions
+
+azureLogicApps:
+    label: Azure Logic Apps
+    permalink: /azure-logic-apps
+    description: Articles about using Azure Logic Apps
+
+bicep:
+    label: Bicep
+    permalink: /bicep
+    description: Articles about using Bicep for Azure deployments
+
 c#:
     label: C#
     permalink: /csharp
@@ -14,9 +34,9 @@ clientSideScripting:
     description: Articles about client side scripting in model-driven Power Apps
 
 dataverse:
-    label: dataverse
+    label: Dataverse
     permalink: /dataverse
-    description: Articles regarding all things dataverse
+    description: Articles regarding all things Dataverse
 
 design:
     label: Design
@@ -43,6 +63,11 @@ javaScript:
     label: JavaScript
     permalink: /javascript
 
+playwright:
+    label: Playwright
+    permalink: /playwright
+    description: Articles about using Playwright for various things
+
 plugin:
     label: Plugin
     permalink: /plugin
@@ -56,6 +81,10 @@ powerApps:
 powerPlatform:
     label: Power Platform
     permalink: /power-platform
+
+python:
+    label: Python
+    permalink: /python
 
 workflow:
     label: Workflow
